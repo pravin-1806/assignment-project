@@ -1,0 +1,116 @@
+.SuperCont{
+    font-family: "Poppins",sans-serif;
+    background-image: url(./bg-login.png);
+    background-repeat:no-repeat;
+    background-position: right bottom ;
+    background-size: 630px auto;
+    height: 91.7vh;
+}
+.logo {
+    width: 180px;
+    height: auto;
+    padding: 5px;
+}
+
+h1 {
+    font-size: 37px;
+    color: #1c2e4a;
+}
+
+#cont {
+    display: flex;
+    flex-direction: column;
+    max-width: 680px;
+    align-items: center; 
+    flex-wrap: wrap;
+}
+
+.cont1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    color: #1c2e4a;
+    /* padding: 20px; */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.form input {
+    width: 400px;
+    max-width: 400px;
+    display: flex;
+    /* flex-wrap: wrap;
+    border: 0;
+    border-bottom: 2px solid rgb(104, 104, 104); */
+    font-size: medium;
+    background-color: transparent;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+.loginBtn{
+    width: 400px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.loginBtn button {
+    width: 120px;
+    height: 35px;
+    background-image: linear-gradient(to right, #2666A2 , #0BDEE8);
+    border-radius: 5px;
+    border-width: 0px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    /* box-shadow:2px 2px 25px black; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.scont {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+
+.scont label {
+    margin-bottom: 11px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+input::placeholder{
+    font-size: 16px;
+    padding-bottom: 20px!important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.password{
+    width: 400px;
+}
+
+#p1{
+    margin: 0px;
+}
