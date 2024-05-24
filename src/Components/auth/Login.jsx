@@ -53,14 +53,13 @@ const Login = () => {
                 }
             }).catch(error=>{
                 console.log("error spoted on fetching data using mail"+error);
-                setUser('Fresher')
+                setUser('Fresher');
             }).finally(() => {
                 setIsNextClicked(true);
             });
         } else{
-            alert('Enter valid Email')
+            alert('Enter valid Email');
         }
-
     }
 
     const handleEmailChange=(event)=>{
@@ -87,13 +86,13 @@ const Login = () => {
     // const handlePasswordChange=(event)=>setEntredPass(event.target.value);
     const handleLogin=()=>{
         if(enteredPass===actualPass && user==='Admin'){
-            navigate('/admin/home')
+            navigate('/admin/home');
         }else if(enteredPass===actualPass && user==='Super Admin'){
-            navigate('/super-admin/home')
+            navigate('/super-admin/home');
         } else if(enteredPass===''){
-            alert('Please Enter the password')
+            alert('Please Enter the password');
         }else {
-            alert('wrong password')
+            alert('wrong password');
         }
     }
 
@@ -101,9 +100,9 @@ const Login = () => {
     <div className='SuperCont'>
         <div id="cont">
         <div className="cont1">
-            <h1>Welcome to Solverminds</h1>
+            <h1 className='font-semibold text-4xl'>Welcome to Solverminds</h1>
             <form className="form">
-                <div className="scont">
+                <div className="scont email">
                     <TextField className="txt-field inp" id="inp-email" error={!isEmailValid} label="Email" placeholder="eg. johnwick@gmail.com" variant="standard" onChange={handleEmailChange}/>
                 </div>
                 {isNextClicked===false?
@@ -131,11 +130,12 @@ const Login = () => {
                     {user==='Super Admin'||user==='Admin'?
                     <>
                         <div className="scont">
-                            <FormControl sx={{ m: 1, width: '25ch' }} id="p1" variant="standard" className='p1'>
+                            <FormControl sx={{ m: 5, width: '25ch' }} id="p1" variant="standard" className='p1'>
                             <InputLabel htmlFor="standard-adornment-password" >Password</InputLabel>
-                                <Input onChange={handlePasswordChange}
-                                className='password'
-                                error={isPasswordEmpty}
+                                <Input
+                                    onChange={handlePasswordChange}
+                                    className='password'
+                                    error={isPasswordEmpty}
                                     id="standard-adornment-password"
                                     type={showPassword ? 'text' : 'password'}
                                     endAdornment={
@@ -164,7 +164,7 @@ const Login = () => {
         </div>
         </div>
     </div>
-  )
+    )
 }
 
 export default Login

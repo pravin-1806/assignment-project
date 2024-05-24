@@ -42,7 +42,7 @@ const ManualGen = () => {
   const handleReview = (data) => {
     setQuestions(data);
     const code = handleTestCodeGeneration();
-
+    
     const date = new Date();
     let day = date.getDate();
     let month = date.getMonth() + 1;
@@ -150,18 +150,18 @@ const ManualGen = () => {
     <div>
       <form onSubmit={handleSubmit((data) => { handleReview(data) })}>
         {/* <TimeLine /> */}
-        <Space className='d-flex justify-content-end'>
+        <Space className='flex justify-end'>
         {contextHolder}
-        <div className='me-5'>
+        <div className='mr-5'>
           <button type='submit' className='border button-review'  style={{borderRadius:'4px', padding:'5px 8px', backgroundColor:'#5cb85c', color:'white', fontWeight:'bold'}}>Review <PublishedWithChangesIcon/></button>
         </div>
         </Space>
         {
           renderForm()
         }
-        <div className='sticky-bottom'>
+        <div className='sticky bottom-0 '>
         <Button onClick={handleAddNew} icon={<ControlPointIcon/>} className='mt-3 mb-2'>Add</Button>
-        <Button onClick={handleRemoveNew} icon={<RemoveCircleOutlineIcon/>} className='mt-3 mb-2 ms-1'>Remove</Button>
+        <Button onClick={handleRemoveNew} icon={<RemoveCircleOutlineIcon/>} className='mt-3 mb-2 ml-1'>Remove</Button>
         </div>
       </form>
       

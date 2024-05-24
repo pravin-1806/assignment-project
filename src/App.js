@@ -11,6 +11,7 @@ import ReviewRequest from './Components/superComp/reviewRequest/ReviewRequest.js
 import { SidebarProviderSuper } from './ContextStore/SideBarContextSuper.jsx';
 import ViewQuestion from './Components/superComp/Global/ViewQuestion.jsx';
 import AllQuestions from './Components/AllQuestionsAdmin/AllQuestions.jsx';
+import AllQuestionsSuper from './Components/superComp/AllQuestionsSuper/AllQuestions.jsx';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
               <Route path='dashboard' element={<DashboardSuper />} />
               <Route path='review-request' element={<ReviewRequest />} />
               <Route path="review-request/details/:id" element={<ViewQuestion />} />
-              <Route path='all-questions' element={<AllQuestions />} />
+              <Route path='all-questions' element={<AllQuestionsSuper />} />
             </Route>
             <Route path='/admin/home' element={<HomeLayoutAdmin />}>
               <Route path='dashboard' element={<Dashboard />} />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useMemo } from 'react'
 import { useSidebar } from '../../../ContextStore/SideBarContextSuper';
 import { AgGridReact } from 'ag-grid-react';
 import "ag-grid-community/styles/ag-grid.css";
@@ -6,10 +6,12 @@ import "ag-grid-community/styles/ag-theme-quartz.css";
 import PublishBtn from '../Global/PublishBtn'
 import { useNavigate } from 'react-router-dom'
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import { useSelector } from 'react-redux';
 
 const ReviewRequest = () => {
   const { isCollapsedSuper } = useSidebar();
   const [reviewRequest, setReviewRequest] = useState();
+  const ThemeMode=useSelector(store=>store.Theme.mode);
 
   const nav=useNavigate();
 
@@ -196,19 +198,30 @@ const ReviewRequest = () => {
     }).then(updatedTask => {
       console.log('Status updated successfully:', updatedTask);
       updateReviewRequest(updatedTask);
-
     }).catch(error => {
       console.error('Error:', error);
     });
-  }
+  };
+
+  const defaultColDef=useMemo(()=>{
+    return {
+      filter:'agTextColumnFilter',
+      floatingFilter:true,
+    }
+  },[]);
+
 
   return (
-    <div className='ps-3 ag-theme-quartz' id="myGrid" style={{ width: isCollapsedSuper ? `calc(100% - 80px)` : `calc(100% - 222px)`, marginLeft: isCollapsedSuper ? '80px' : '220px', height: '500px' }} >
-      <h2>Review Requests</h2>
-      <div style={{ width: '1050px', height: '500px' }}>
+    <div className={`p-3   dark:bg-slate-900 text-white`} id="myGrid" style={{ width: isCollapsedSuper ? `calc(100% - 80px)` : `calc(100% - 200px)`, marginLeft: isCollapsedSuper ? '80px' : '200px', height: '92.8vh' }}>
+      <h2 className='font-semibold text-4xl mb-4'>Review Requests</h2>
+      <div style={{ width: '1050px', height: '500px' }} className={`${ThemeMode==='light'? 'ag-theme-quartz':'ag-theme-quartz-dark'}`}>
         <AgGridReact
           rowData={rowData}
           columnDefs={colDef}
+          pagination={true}
+          paginationPageSize={10}
+          paginationPageSizeSelector={[10, 25, 50]}
+          defaultColDef={defaultColDef}
         />
       </div>
     </div>

@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { useSidebar } from '../../ContextStore/SideBarContext'
+import { useSidebar } from '../../../ContextStore/SideBarContextSuper'
 import { Tabs } from 'antd';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
-import QuestionListing from './QuestionListing';
-import Grid from './Grid';
+import QuestionListing from '../../AllQuestionsAdmin/QuestionListing';
+import Grid from '../../AllQuestionsAdmin/Grid';
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
-import './allQuestions.css'
+import '../../AllQuestionsAdmin/allQuestions.css'
 import { red } from '@mui/material/colors';
 import { useSelector } from 'react-redux';
 
-
 const AllQuestions = () => {
-    const { isCollapsed } = useSidebar();
+    const { isCollapsedSuper } = useSidebar();
     const [questionType,setQuestionType]=useState('Manual Entry');
-    const [testDetails,setTestDetails]=useState();
     const ThemeMode=useSelector(store=>store.Theme.mode);
     
     const items = [
@@ -54,9 +52,8 @@ const AllQuestions = () => {
         console.log(value.label);
     }
 
-
-    return (
-        <div className='pl-3 dark:bg-slate-800' style={{ width: isCollapsed ? `calc(100% - 80px)` : `calc(100% - 200px)`, marginLeft: isCollapsed ? '80px' : '200px', height:'92.8vh'}}>
+  return (
+    <div className='pl-3 dark:bg-slate-800' style={{ width: isCollapsedSuper ? `calc(100% - 80px)` : `calc(100% - 200px)`, marginLeft: isCollapsedSuper ? '80px' : '200px', height:'92.8vh'}}>
             <Autocomplete
                 disablePortal
                 id="combo-box-demo"
@@ -107,7 +104,7 @@ const AllQuestions = () => {
                
             />
         </div>
-    )
+  )
 }
 
 export default AllQuestions

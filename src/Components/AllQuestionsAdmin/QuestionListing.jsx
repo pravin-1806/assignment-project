@@ -55,11 +55,12 @@ const QuestionListing = ({type}) => {
                 console.log('state',rowData)
             }
         })
-    },[])
+    },[]);
     
   return (
     <div>
-      <Grid rowData={rowData}/>
+      <Grid rowData={rowData}
+      />
     </div>
   )
 }

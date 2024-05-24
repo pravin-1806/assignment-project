@@ -32,7 +32,7 @@
     ];
 
     return (
-      <div className='ps-3' style={{ width: isCollapsed ? `calc(100% - 80px)` : `calc(100% - 222px)`,marginLeft:isCollapsed?'80px':'220px' }}>
+      <div className='pl-3' style={{ width: isCollapsed ? `calc(100% - 80px)` : `calc(100% - 222px)`,marginLeft:isCollapsed?'80px':'220px' }}>
         <Tabs
           defaultActiveKey='1'
           items={items}

@@ -14,17 +14,17 @@ const SideBar = () => {
 
   return (
     <div>
-      <Sider collapsed={isCollapsed} collapsible trigger={null} style={{ height: '90vh', backgroundColor: 'white',width:'200px', borderRight: '1px solid #f0f0f0',position:'fixed'}}>
+      <Sider theme='dark' collapsed={isCollapsed} collapsible trigger={null} style={{ height: '90vh', backgroundColor: 'white',width:'200px', borderRight: '1px solid #f0f0f0',position:'fixed'}}>
       <Menu>
         {isCollapsed && (
-          <menuBox className='d-flex justify-content-center'>
+          <menuBox className='flex justify-center'>
             <Button key='Expand' onClick={() => { setIsCollapsed(!isCollapsed) }} icon={<DoubleRightOutlined />} />
           </menuBox>
         )}
       </Menu>
       <Menu>
       {!isCollapsed && (
-          <menuBox className='' style={{position:'absolute',marginLeft:'80%'}}>
+          <menuBox className='absolute ml-40' >
             <Button onClick={() => { setIsCollapsed(!isCollapsed) }} icon={<DoubleLeftOutlined />} />
           </menuBox>
         )}

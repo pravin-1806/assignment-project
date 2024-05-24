@@ -1,0 +1,4 @@
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,
+.ant-tabs-tab-btn {
+  color: rgb(142, 140, 140) !important;
+}

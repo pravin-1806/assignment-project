@@ -5,7 +5,7 @@ const {TextArea}=Input;
 const Textarea = (props) => {
   const {num, ...others} =props;
   return (
-    <div className='d-flex align-items-center gap-3 mt-3'>
+    <div className='flex align-center gap-3 mt-3'>
       <Button disabled>{num}</Button>
       <TextArea
         placeholder="Enter the question"
